@@ -1,1 +1,158 @@
-
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickFix Services</title>
+  <link rel="shortcut icon" href="logo1.png" type="image/x-icon">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fdf6e3;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      background-color: #ff6f00;
+      padding: 20px;
+      color: white;
+      font-size: 28px;
+    }
+    section {
+      padding: 20px;
+    }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+    .service {
+      background-color: #fff3e0;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .whatsapp {
+      margin-top: 20px;
+      background-color: #25D366;
+      padding: 15px;
+      border-radius: 8px;
+      display: inline-block;
+    }
+    .whatsapp a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 400px;
+      margin: 20px auto;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    form input, form select, form textarea {
+      width: 100%;
+      padding: 5px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    form button {
+      background-color: #ff6f00;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #loader {
+      display: none;
+      color: #ff6f00;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    footer {
+      margin-top: 30px;
+      padding: 10px;
+      background: #eee;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    QuickFix 🚀<br>
+    Trusted Local Services at Your Doorstep<br>
+    Fast • Reliable • Affordable
+  </header>
+  <section>
+    <h2>Available Services:</h2>
+    <div class="services">
+      <div class="service">❄️ AC Repair</div>
+      <div class="service">💡 Electrician</div>
+      <div class="service">🚿 Plumber</div>
+      <div class="service">💄 Beautician at Home</div>
+      <div class="service">📚 Home Tuition</div>
+      <div class="service">🔧 Mobile/Laptop Repair</div>
+      <div class="service">🚪 Carpenter Work</div>
+      <div class="service">🧹 House Cleaning</div>
+      <div class="service">📦 Shifting & Moving Help</div>
+      <div class="service">🧺 Laundry Pickup & Drop</div>
+      <div class="service">🌿 Gardening & Plant Care</div>
+      <div class="service">🧑‍🍳 Cook for Home Events</div>
+    </div>
+    <div class="whatsapp">
+      <a href="https://wa.me/919384746023?text=Vanakkam!%20I%20need%20a%20service%20from%20QuickFix%20Kallakurichi." target="_blank">
+        📲 Book via WhatsApp: 9384746023
+      </a>
+    </div>
+  </section>
+  <section>
+    <h2>Request a Callback</h2>
+    <form id="quickfix-form">
+      <input type="text" id="Name" name="Name" placeholder="Your Name" required>
+      <input type="tel" id="Phone" name="Phone" placeholder="Phone Number" required>
+      <input type="text" id="Service" name="Service" placeholder="Service Needed" required>
+      <textarea id="Message" name="Message" placeholder="Message"></textarea>
+      <button type="submit">Submit</button>
+      <div id="loader">⏳ Submitting your request...</div>
+    </form>
+    <script>
+      document.getElementById("quickfix-form").addEventListener("submit", function(e) {
+        e.preventDefault();
+        document.getElementById("loader").style.display = "block";
+        const formdata = {
+          Name: document.getElementById("Name").value,
+          Phone: document.getElementById("Phone").value,
+          Service: document.getElementById("Service").value,
+          Message: document.getElementById("Message").value
+        };
+        fetch("https://script.google.com/macros/s/AKfycbw4KDd3HuJv-pcbMZaLZFvNvsyMZmGg9nG9KnDeOXOBqy9-5zr-_iQciSZlEzLgbIi8/exec", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(formdata)
+        })
+        .then(response => response.json())
+        .then(result => {
+          document.getElementById("loader").style.display = "none";
+          window.location.href = "thankyou.html";
+        })
+        .catch(error => {
+          document.getElementById("loader").style.display = "none";
+          console.error("❌ Error:", error);
+          alert("⚠️ Something went wrong. Please try again.");
+        });
+      });
+    </script>
+  </section>
+  <footer>
+    <p>&copy; 2025 QuickFix Kallakurichi. All rights reserved.</p>
+    <p>Contact us anytime: <a href="tel:9384746023">9384746023</a> | Email: support@quickfixkallakurichi.com</p>
+  </footer>
+</body>
+</html>
