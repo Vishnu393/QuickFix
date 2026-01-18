@@ -141,26 +141,20 @@ document.getElementById("quickfix-form").addEventListener("submit", function(e) 
     Service: document.getElementById("Service").value,
     Message: document.getElementById("Message").value
   };
-  fetch("https://script.google.com/macros/s/AKfycbz5ILooBlpRknKbMH8l6hraXa8QFZ0SEcemlL7wTlxLWdV9LCafJVha7941M5ME1KhWWg/exec", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(formdata)
-  })
-  .then(res => res.text())
-  .then(result => {
-    document.getElementById("loader").style.display = "none";
-    if (result === "Duplicate") {
-      alert("⚠️ This number already submitted!");
-      btn.disabled = false;
-    } else {
-      window.location.href = "thankyou.html";
-    }
-  })
-  .catch(() => {
-    alert("❌ Error occurred. Try again.");
-    btn.disabled = false;
-  });
+ fetch("https://script.google.com/macros/s/AKfycbwvyfKpf8sRUu4cCmIMN_IkI1kJ5ntDAQEfIkYPmfdaBTFJ8THSva0gXdAN3XPHzMBKxw/exec", {
+  method: "POST",
+  body: JSON.stringify(formdata)
+})
+.then(res => res.text())
+.then(txt => {
+  document.getElementById("loader").style.display = "none";
+  window.location.href = "thankyou.html";
+})
+.catch(err => {
+  document.getElementById("loader").style.display = "none";
+  alert("Error occurred. Try again.");
 });
 </script>
 </body>
+
 </html>
