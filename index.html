@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QuickFix Kallakurichi</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        🔧 QuickFix Kallakurichi
+    </div>
+
+    <div class="tagline">
+        Trusted Home Services at Your Doorstep
+    </div>
+</header>
+
+<section class="hero">
+
+    <h1>Book Trusted Professionals Near You</h1>
+
+    <p>
+        Electrician, Plumber, AC Service,
+        Beautician, Home Tuition and More.
+    </p>
+
+</section>
+
+<section class="services">
+
+<h2>Our Services</h2>
+
+<div class="service-grid">
+
+<div class="card">
+<h3>⚡ Electrician</h3>
+<button onclick="openBooking('Electrician')">
+Book Now
+</button>
+</div>
+
+<div class="card">
+<h3>🚰 Plumber</h3>
+<button onclick="openBooking('Plumber')">
+Book Now
+</button>
+</div>
+
+<div class="card">
+<h3>❄️ AC Service</h3>
+<button onclick="openBooking('AC Service')">
+Book Now
+</button>
+</div>
+
+<div class="card">
+<h3>💄 Beautician</h3>
+<button onclick="openBooking('Beautician')">
+Book Now
+</button>
+</div>
+
+<div class="card">
+<h3>📚 Home Tuition</h3>
+<button onclick="openBooking('Home Tuition')">
+Book Now
+</button>
+</div>
+
+<div class="card">
+<h3>🧹 Home Cleaning</h3>
+<button onclick="openBooking('Home Cleaning')">
+Book Now
+</button>
+</div>
+
+<div class="card">
+<h3>🪚 Carpenter</h3>
+<button onclick="openBooking('Carpenter')">
+Book Now
+</button>
+</div>
+
+<div class="card">
+<h3>📹 CCTV Installation</h3>
+<button onclick="openBooking('CCTV Installation')">
+Book Now
+</button>
+</div>
+
+</div>
+
+</section>
+
+<section class="contact">
+
+<h2>Contact Us</h2>
+
+<p>📞 9384746023</p>
+
+<p>📧 quickfixkallakurichi@gmail.com</p>
+
+<p>
+📍 Kallakurichi, Chinnasalem,
+Ulundurpet, Sankarapuram &
+Nearby Areas
+</p>
+
+<a
+class="whatsapp-btn"
+href="https://wa.me/919384746023"
+target="_blank">
+WhatsApp Us
+</a>
+
+</section>
+
+<!-- Popup Form -->
+
+<div class="popup" id="bookingPopup">
+
+<div class="popup-content">
+
+<span class="close"
+onclick="closeBooking()">
+×
+</span>
+
+<h2>Book Service</h2>
+
+<form id="bookingForm">
+
+<input type="text" id="name" placeholder="Full Name" required>
+
+<input type="tel" id="phone" placeholder="Phone Number" required>
+
+<input type="email" id="email" placeholder="Email Address" required>
+
+<input type="text" id="address" placeholder="Address" required>
+
+<input type="datetime-local" id="dateTime" required>
+
+<input type="hidden" id="serviceName">
+
+<button type="submit">
+Submit Booking
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+<footer>
+
+© 2026 QuickFix Kallakurichi
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
